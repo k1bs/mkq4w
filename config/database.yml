@@ -78,8 +78,15 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
+
+staging:
+  <<: *default
+  database: mkq4w_staging
+  username: deploy
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+
 production:
   <<: *default
   database: mkq4w_production
-  username: mkq4w
-  password: <%= ENV['MKQ4W_DATABASE_PASSWORD'] %>
+  username: deploy
+  password: <%= ENV['DATABASE_PASSWORD'] %>
